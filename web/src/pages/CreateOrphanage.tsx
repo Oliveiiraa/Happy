@@ -10,6 +10,8 @@ import Sidebar from "../components/Sidebar";
 import mapIcon from "../utils/mapIcon";
 import api from "../services/api";
 
+import { toast } from 'react-toastify';
+
 export default function CreateOrphanage() {
   const history = useHistory();
 
@@ -68,7 +70,7 @@ export default function CreateOrphanage() {
 
     await api.post('orphanages', data);
 
-    alert('Cadastro realizado com sucesso');
+    toast.success('Orfanato cadastrado com sucesso');
 
     history.push('/app');
   }
